@@ -77,7 +77,7 @@ public class MOUSEMOVERR : MonoBehaviour
 
         bool isGrounded()
         {
-            return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+            return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, groundLayer);
         }
 
         void Flip()
