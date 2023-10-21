@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class MOUSEMOVERR : MonoBehaviour
 {
-
+    private float horizontal;
     private float speed = 10f;
     private float jump = 5f;
     private bool isFacingRight = true;
     private BoxCollider2D coll;
     bool mOUSEMODE = true;
 
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
 
-    private float horizontal;
+    
     // Start is called before the first frame update
     void Start()
     {
