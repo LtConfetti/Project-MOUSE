@@ -33,9 +33,12 @@ public class MOUSEMOVERR : MonoBehaviour
 
         if (mOUSEMODE == true)
         {
-            
 
-            this.transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0);
+
+            //this.transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0);
+            //THIS CODE MAKES YOU PHASE WALLS DO NOT USE, IS FUNNY THOUGH MY THEORY IS TRANSFORM IS FORCEFULLY MOVING IT TO GO INTO OTHER RIGID'S
+
+            horizontal = Input.GetAxisRaw("Horizontal");
 
 
             if (Input.GetButtonDown("Jump") && isGrounded())
@@ -47,6 +50,8 @@ public class MOUSEMOVERR : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             }
+
+            Flip();
         }
 
         if (mOUSEMODE == false)
@@ -67,6 +72,8 @@ public class MOUSEMOVERR : MonoBehaviour
                 }
             }
 
+            Flip();
+
 
 
 
@@ -75,22 +82,33 @@ public class MOUSEMOVERR : MonoBehaviour
 
 
 
-        bool isGrounded()
+
+
+
+
+
+    }
+
+    bool isGrounded()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, groundLayer);
+    }
+
+
+    private void Flip()
+    {
+        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
-            return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, groundLayer);
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
         }
+    }
 
-        void Flip()
-        {
-            if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
-            {
-                isFacingRight = !isFacingRight;
-                Vector3 localScale = transform.localScale;
-                localScale.x *= -1f;
-                transform.localScale = localScale;
-            }
-        }
-
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
