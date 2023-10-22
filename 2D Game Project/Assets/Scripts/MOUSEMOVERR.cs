@@ -5,8 +5,8 @@ using UnityEngine;
 public class MOUSEMOVERR : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 10f;
-    private float jump = 5f;
+    private float speed = 12f;
+    private float jump = 10f;
     private bool isFacingRight = true;
     private BoxCollider2D coll;
     bool mOUSEMODE = true;
@@ -57,21 +57,23 @@ public class MOUSEMOVERR : MonoBehaviour
 
         if (mOUSEMODE == false)
         {
-            {
+            
                 if (Input.GetKey(KeyCode.D))
                 {
-                    rb.AddForce(transform.right * 50);
-                    Debug.Log("addforce");
-
+                    rb.AddForce(transform.right * 300);
+                    
+                    
                 }
 
                 if (Input.GetKey(KeyCode.A))
                 {
-                    rb.AddForce(transform.right * -50);
-                    Debug.Log("addforce");
-
+                    rb.AddForce(transform.right * -300);
+                    
+                    
                 }
-            }
+
+                
+            
 
             Flip();
 
