@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MOUSEMOVERR : MonoBehaviour
+
 {
     private float horizontal;
     private float speed = 12f;
@@ -11,14 +12,11 @@ public class MOUSEMOVERR : MonoBehaviour
     private BoxCollider2D coll;
     bool mOUSEMODE = true;
 
-
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
-
     private Animator anim;
-
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +24,6 @@ public class MOUSEMOVERR : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
-
     }
 
     // Update is called once per frame
@@ -35,17 +32,8 @@ public class MOUSEMOVERR : MonoBehaviour
         anim.SetBool("RUN", horizontal != 0);
         anim.SetBool("grounded", isGrounded());
 
-        if(isGrounded() == false)
-        {
-            anim.SetTrigger("JUMP");
-        }
-        
-
-
         if (mOUSEMODE == true)
         {
-
-
             //this.transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0);
             //THIS CODE MAKES YOU PHASE WALLS DO NOT USE, IS FUNNY THOUGH MY THEORY IS TRANSFORM IS FORCEFULLY MOVING IT TO GO INTO OTHER RIGID'S
 
@@ -55,7 +43,7 @@ public class MOUSEMOVERR : MonoBehaviour
             if (Input.GetButtonDown("Jump") && isGrounded())
             {
                 rb.velocity = new Vector2(rb.velocity.x, jump);
-                //anim.SetTrigger("JUMP");
+                anim.SetTrigger("JUMP");
             }
 
             if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
@@ -64,44 +52,32 @@ public class MOUSEMOVERR : MonoBehaviour
                 //anim.SetTrigger("JUMP");
             }
 
-            Flip();
+            if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+            {
+                Flip();
+            }
         }
 
         if (mOUSEMODE == false)
         {
-            
+            anim.SetBool("RUN", Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A));
                 if (Input.GetKey(KeyCode.D))
                 {
                     rb.AddForce(transform.right * 300);
                     
-                    
+                     //anim.SetBool("RUN", true);
+
                 }
 
                 if (Input.GetKey(KeyCode.A))
                 {
                     rb.AddForce(transform.right * -300);
                     
-                    
+                   //anim.SetBool("RUN");
+
                 }
-
-                
-            
-
             Flip();
-
-
-
-
         }
-
-
-
-
-
-
-
-
-
     }
 
     bool isGrounded()
@@ -112,13 +88,10 @@ public class MOUSEMOVERR : MonoBehaviour
 
     private void Flip()
     {
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
-        {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
-        }
     }
 
     private void FixedUpdate()
@@ -136,7 +109,6 @@ public class MOUSEMOVERR : MonoBehaviour
             Debug.Log("CHEESE MODE ACTIVATED");
             mOUSEMODE = false;
             Destroy(collision.gameObject);
-
         }
     }
 }
