@@ -4,15 +4,72 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;
+
+    public AudioClip jumpClip;
+    public AudioClip dashClip;
+    public AudioClip footstepSound;
+    public AudioClip attackSound;
+    public AudioClip backgroundMusic;
+
+    private AudioSource soundEffectsSource;//what plays the sound
+    private AudioSource backgroundMusicSource;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        if (instance == null)//makes sure this is the only audio manager/first, if it tries to run again it will check if there is another and destroy this one
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        soundEffectsSource = gameObject.AddComponent<AudioSource>();//constructors
+        backgroundMusicSource = gameObject.AddComponent<AudioSource>();
+
+        backgroundMusicSource.clip = backgroundMusic;
+        backgroundMusicSource.loop = true;
+        backgroundMusicSource.Play();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayJumpSound()
     {
-        
+        soundEffectsSource.PlayOneShot(jumpClip);
+    }
+    public void PlayDashSound()
+    {
+        soundEffectsSource.PlayOneShot(dashClip);
+    }
+    public void PlayFootstepSound()
+    {
+        soundEffectsSource.PlayOneShot(footstepSound);
+    }
+    public void PlayAttackSound()
+    {
+        soundEffectsSource.PlayOneShot(attackSound);
+    }
+
+    public void PlayBackgroundMusic()
+    {
+        if (!backgroundMusicSource.isPlaying)
+        {
+            backgroundMusicSource.Play();
+        }
+    }
+    public void PauseBackgroundMusic()
+    {
+        backgroundMusicSource.Pause();
+    }
+    public void StopBackgroundMusic()
+    {
+        backgroundMusicSource.Stop();
+    }
+    public void SetBackgroundMusicVolume(float volume)
+    {
+        backgroundMusicSource.volume = volume;
     }
 }

@@ -17,19 +17,29 @@ public class MOUSEMOVERR : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
 
-    
+    private Animator anim;
+
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        anim.SetBool("RUN", horizontal != 0);
+        anim.SetBool("grounded", isGrounded());
 
+        if(isGrounded() == false)
+        {
+            anim.SetTrigger("JUMP");
+        }
+        
 
 
         if (mOUSEMODE == true)
@@ -45,11 +55,13 @@ public class MOUSEMOVERR : MonoBehaviour
             if (Input.GetButtonDown("Jump") && isGrounded())
             {
                 rb.velocity = new Vector2(rb.velocity.x, jump);
+                //anim.SetTrigger("JUMP");
             }
 
             if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
             {
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+                //anim.SetTrigger("JUMP");
             }
 
             Flip();
