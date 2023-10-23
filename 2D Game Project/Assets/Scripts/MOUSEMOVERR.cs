@@ -6,8 +6,8 @@ public class MOUSEMOVERR : MonoBehaviour
 
 {
     private float horizontal;
-    private float speed = 12f;
-    private float jump = 10f;
+    private float speed = 10f;
+    private float jump = 8f;
     private bool isFacingRight = true;
     private BoxCollider2D coll;
     bool mOUSEMODE = true;
@@ -64,19 +64,19 @@ public class MOUSEMOVERR : MonoBehaviour
                 if (Input.GetKey(KeyCode.D))
                 {
                     rb.AddForce(transform.right * 300);
-                    
-                     //anim.SetBool("RUN", true);
+
+                   Flip();
 
                 }
 
                 if (Input.GetKey(KeyCode.A))
                 {
                     rb.AddForce(transform.right * -300);
-                    
-                   //anim.SetBool("RUN");
 
+                  
+                  Flip();
                 }
-            Flip();
+            //Flip();
         }
     }
 
