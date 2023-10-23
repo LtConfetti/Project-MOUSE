@@ -35,7 +35,7 @@ public class MOUSEMOVERR : MonoBehaviour
         if (mOUSEMODE == true)
         {
             //this.transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0);
-            //THIS CODE MAKES YOU PHASE WALLS DO NOT USE, IS FUNNY THOUGH MY THEORY IS TRANSFORM IS FORCEFULLY MOVING IT TO GO INTO OTHER RIGID'S
+            //ancient evil:THIS CODE MAKES YOU PHASE WALLS DO NOT USE, IS FUNNY THOUGH MY THEORY IS TRANSFORM IS FORCEFULLY MOVING IT TO GO INTO OTHER RIGID'S
 
             horizontal = Input.GetAxisRaw("Horizontal");
 
