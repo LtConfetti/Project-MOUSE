@@ -1,0 +1,47 @@
+Video Essay:
+https://www.youtube.com/watch?v=KKeBQzi0pzM&ab_channel=LtConfetti
+
+GITHUB:
+https://github.com/LtConfetti/Project-MOUSE
+
+
+
+
+Assests:
+Mouse Player Sprite:
+https://sagak-art-pururu.itch.io/ratman
+
+Tile for Platforms
+https://pixelfrog-assets.itch.io/kings-and-pigs
+
+Background Tiles:
+https://gnomenlied.itch.io/wood-tileset
+
+Spike Sprite:
+https://www.pixilart.com/art/spike-sprite-96d5fe6c7ecf604
+
+Book Spine: 
+https://www.vexels.com/png-svg/preview/286663/bordeaux-book-spine-color-stroke
+
+JUMP SOUND:
+https://freesound.org/people/MATRIXXX_/sounds/458258/
+
+BGM:
+https://www.youtube.com/watch?v=ggYkIJPmj0I&pp=ygUXam9qbyAxNiBiaXQgb2luZ28gb2luZ28%3D
+
+DEATH SOUND:
+https://freesound.org/people/antwash/sounds/118564/
+
+
+
+VIDEO:
+Movement Script:
+https://www.youtube.com/watch?v=K1xZ-rycYY8&ab_channel=bendux
+
+Death Script:
+https://www.youtube.com/watch?v=ynH51MiKutY&pp=ygUQdW5pdHkgZGVhdGggY29kZQ%3D%3D
+
+Camera Script:
+https://www.youtube.com/watch?v=ZBj3LBA2vUY&t=23s&pp=ygUec21vb3RoIGNhbWVyYSBmb2xsb3cgdW5pdHkgMmQj
+
+
