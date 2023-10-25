@@ -63,18 +63,21 @@ public class MOUSEMOVERR : MonoBehaviour
             anim.SetBool("RUN", Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A));
                 if (Input.GetKey(KeyCode.D))
                 {
-                    rb.AddForce(transform.right * 300);
-
-                   Flip();
+                    rb.AddForce(transform.right * 700);
+                    Vector3 localScale = transform.localScale;
+                    localScale.x = 1f;
+                    transform.localScale = localScale;
+                //THANKS TO KAYLON FOR TEACHING ME THE ALPHABET A != D
 
                 }
 
                 if (Input.GetKey(KeyCode.A))
                 {
-                    rb.AddForce(transform.right * -300);
+                    rb.AddForce(transform.right * -700);
+                    Vector3 localScale = transform.localScale;
+                    localScale.x = -1f;
+                    transform.localScale = localScale;
 
-                  
-                  Flip();
                 }
             //Flip();
         }
@@ -101,12 +104,12 @@ public class MOUSEMOVERR : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("CHEESE MODE UNACTIVE");
         //Check for a match with the specific tag on any GameObject that collides with your GameObject
         if (collision.gameObject.tag == "Cheese")
         {
             //If the GameObject has the same tag as specified, output this message in the console
             Debug.Log("CHEESE MODE ACTIVATED");
+            horizontal = 0;
             mOUSEMODE = false;
             Destroy(collision.gameObject);
         }
