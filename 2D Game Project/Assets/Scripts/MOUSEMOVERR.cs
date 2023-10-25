@@ -10,11 +10,14 @@ public class MOUSEMOVERR : MonoBehaviour
     private float jump = 8f;
     private bool isFacingRight = true;
     private BoxCollider2D coll;
-    bool mOUSEMODE = true;
+    private SpriteRenderer sprite;
+    public bool mOUSEMODE = true;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private GameObject cheeseScreen;
+    [SerializeField] private GameObject cheeseBar;
 
     private Animator anim;
 
@@ -24,6 +27,9 @@ public class MOUSEMOVERR : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
+        cheeseScreen.SetActive(false);
+        cheeseBar.SetActive(true);
     }
 
     // Update is called once per frame
@@ -79,6 +85,8 @@ public class MOUSEMOVERR : MonoBehaviour
                     transform.localScale = localScale;
 
                 }
+
+            
             //Flip();
         }
     }
@@ -110,8 +118,12 @@ public class MOUSEMOVERR : MonoBehaviour
             //If the GameObject has the same tag as specified, output this message in the console
             Debug.Log("CHEESE MODE ACTIVATED");
             horizontal = 0;
-            mOUSEMODE = false;
             Destroy(collision.gameObject);
+            mOUSEMODE = false;
+            sprite.color = Color.yellow;
+            cheeseScreen.SetActive(true);
+            cheeseBar.SetActive(false);
+            
         }
     }
 }

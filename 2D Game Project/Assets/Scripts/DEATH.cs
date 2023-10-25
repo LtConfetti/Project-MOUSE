@@ -15,7 +15,7 @@ public class DEATH : MonoBehaviour
     }
 
     // Update is called once per frame
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         //Check for a match with the specific tag on any GameObject that collides with your GameObject
         if (collision.gameObject.tag == "Hazard")
@@ -23,11 +23,12 @@ public class DEATH : MonoBehaviour
             Die();
         }
     }
+    
 
     private void Die()
     {
         rb.bodyType = RigidbodyType2D.Static;
-        anim.setTrigger("Death");
+        anim.SetTrigger("death");
     }
 
     private void RestartLevel()

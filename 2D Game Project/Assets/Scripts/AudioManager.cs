@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip footstepSound;
     public AudioClip backgroundMusic;
     public AudioClip peteCalling;
+    public AudioClip mainMenu;
 
     private AudioSource soundEffectsSource;//what plays the sound
     private AudioSource backgroundMusicSource;
@@ -49,6 +50,12 @@ public class AudioManager : MonoBehaviour
     {
         soundEffectsSource.PlayOneShot(peteCalling);
     }
+
+    public void PetePhone();
+    {
+        soundEffectsSource.PlayOneShot(mainMenu);
+    }
+
 
     public void PlayBackgroundMusic()
     {
