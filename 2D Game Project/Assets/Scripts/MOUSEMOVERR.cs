@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class MOUSEMOVERR : MonoBehaviour
 
 {
@@ -12,6 +13,8 @@ public class MOUSEMOVERR : MonoBehaviour
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
     public bool mOUSEMODE = true;
+    private AudioSource audioPlayer;
+
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -28,6 +31,7 @@ public class MOUSEMOVERR : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        audioPlayer = GetComponent<AudioSource>();
         cheeseScreen.SetActive(false);
         cheeseBar.SetActive(true);
     }
@@ -50,6 +54,7 @@ public class MOUSEMOVERR : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, jump);
                 anim.SetTrigger("JUMP");
+                AudioManager.instance.PlayJumpSound();
             }
 
             if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
@@ -73,8 +78,6 @@ public class MOUSEMOVERR : MonoBehaviour
                     Vector3 localScale = transform.localScale;
                     localScale.x = 1f;
                     transform.localScale = localScale;
-                //THANKS TO KAYLON FOR TEACHING ME THE ALPHABET A != D
-
                 }
 
                 if (Input.GetKey(KeyCode.A))
@@ -83,11 +86,10 @@ public class MOUSEMOVERR : MonoBehaviour
                     Vector3 localScale = transform.localScale;
                     localScale.x = -1f;
                     transform.localScale = localScale;
-
                 }
 
             
-            //Flip();
+            
         }
     }
 

@@ -7,9 +7,6 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     public AudioClip jumpClip;
-    public AudioClip footstepSound;
-    public AudioClip peteShout;
-    public AudioClip petePhone;
     public AudioClip backgroundMusic;
 
     private AudioSource soundEffectsSource;
@@ -41,19 +38,6 @@ public class AudioManager : MonoBehaviour
         soundEffectsSource.PlayOneShot(jumpClip);
     }
 
-    public void PlayFootstepSound()
-    {
-        soundEffectsSource.PlayOneShot(footstepSound);
-    }
-    public void PlayPhoneSound()
-    {
-        soundEffectsSource.PlayOneShot(petePhone);
-    }
-
-    public void PlayShoutSound()
-    {
-        soundEffectsSource.PlayOneShot(peteShout);
-    }
 
     public void PlayBackgroundMusic()
     {
