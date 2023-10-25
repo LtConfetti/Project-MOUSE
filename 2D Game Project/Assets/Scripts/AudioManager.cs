@@ -8,16 +8,16 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip jumpClip;
     public AudioClip footstepSound;
+    public AudioClip peteShout;
+    public AudioClip petePhone;
     public AudioClip backgroundMusic;
-    public AudioClip peteCalling;
-    public AudioClip mainMenu;
 
-    private AudioSource soundEffectsSource;//what plays the sound
+    private AudioSource soundEffectsSource;
     private AudioSource backgroundMusicSource;
     // Start is called before the first frame update
     void Awake()
     {
-        if (instance == null)//makes sure this is the only audio manager/first, if it tries to run again it will check if there is another and destroy this one
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        soundEffectsSource = gameObject.AddComponent<AudioSource>();//constructors
+        soundEffectsSource = gameObject.AddComponent<AudioSource>();
         backgroundMusicSource = gameObject.AddComponent<AudioSource>();
 
         backgroundMusicSource.clip = backgroundMusic;
@@ -40,22 +40,20 @@ public class AudioManager : MonoBehaviour
     {
         soundEffectsSource.PlayOneShot(jumpClip);
     }
-   
+
     public void PlayFootstepSound()
     {
         soundEffectsSource.PlayOneShot(footstepSound);
     }
-
-    public void PeteShout()
+    public void PlayPhoneSound()
     {
-        soundEffectsSource.PlayOneShot(peteCalling);
+        soundEffectsSource.PlayOneShot(petePhone);
     }
 
-    public void PetePhone();
+    public void PlayShoutSound()
     {
-        soundEffectsSource.PlayOneShot(mainMenu);
+        soundEffectsSource.PlayOneShot(peteShout);
     }
-
 
     public void PlayBackgroundMusic()
     {
