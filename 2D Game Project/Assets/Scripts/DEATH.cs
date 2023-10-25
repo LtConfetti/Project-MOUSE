@@ -7,11 +7,13 @@ public class DEATH : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
+    private AudioSource audioPlayer;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class DEATH : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
+        AudioManager.instance.PlayDeathSound();
     }
 
     private void RestartLevel()

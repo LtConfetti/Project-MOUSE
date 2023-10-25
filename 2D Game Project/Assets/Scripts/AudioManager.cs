@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip jumpClip;
     public AudioClip backgroundMusic;
+    public AudioClip deathSound;
 
     private AudioSource soundEffectsSource;
     private AudioSource backgroundMusicSource;
@@ -36,6 +37,11 @@ public class AudioManager : MonoBehaviour
     public void PlayJumpSound()
     {
         soundEffectsSource.PlayOneShot(jumpClip);
+    }
+
+    public void PlayDeathSound()
+    {
+        soundEffectsSource.PlayOneShot(deathSound);
     }
 
 
