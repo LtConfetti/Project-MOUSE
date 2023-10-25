@@ -1,24 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//from Lecturer's code, modified
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-
+    //sounds as variables
     public AudioClip jumpClip;
     public AudioClip backgroundMusic;
     public AudioClip deathSound;
 
     private AudioSource soundEffectsSource;
     private AudioSource backgroundMusicSource;
-    // Start is called before the first frame update
+   
     void Awake()
     {
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            //checks if there is another version in the code, and destorys that one
         }
         else
         {
@@ -33,7 +34,7 @@ public class AudioManager : MonoBehaviour
         backgroundMusicSource.loop = true;
         backgroundMusicSource.Play();
     }
-
+    //sets scripts for use in other scripts 
     public void PlayJumpSound()
     {
         soundEffectsSource.PlayOneShot(jumpClip);
@@ -51,17 +52,5 @@ public class AudioManager : MonoBehaviour
         {
             backgroundMusicSource.Play();
         }
-    }
-    public void PauseBackgroundMusic()
-    {
-        backgroundMusicSource.Pause();
-    }
-    public void StopBackgroundMusic()
-    {
-        backgroundMusicSource.Stop();
-    }
-    public void SetBackgroundMusicVolume(float volume)
-    {
-        backgroundMusicSource.volume = volume;
     }
 }
