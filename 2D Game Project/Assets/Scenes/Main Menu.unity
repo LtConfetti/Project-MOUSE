@@ -288,8 +288,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1065, y: 519}
+  m_AnchoredPosition: {x: -0, y: 3.0306}
+  m_SizeDelta: {x: 1907.502, y: 1076.627}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &171593538
 MonoBehaviour:
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1845005868, guid: 05b2dcb85c90bcf41b293f1f17c28144, type: 3}
+  m_Sprite: {fileID: 2251027043412082265, guid: c15d1be321b9d5b499f710f213ef5fef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -365,7 +365,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115, y: -185}
+  m_AnchoredPosition: {x: -413, y: -190}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &202959868
@@ -693,8 +693,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -166.94, y: 160}
-  m_SizeDelta: {x: 333.8817, y: 98.8577}
+  m_AnchoredPosition: {x: -294, y: 207}
+  m_SizeDelta: {x: 691.5503, y: 271.8879}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &664530231
 MonoBehaviour:
@@ -907,7 +907,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 270, y: -185}
+  m_AnchoredPosition: {x: 303, y: -190}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1578465435
@@ -1038,8 +1038,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: -11.844}
-  m_SizeDelta: {x: 471.8301, y: 96.3118}
+  m_AnchoredPosition: {x: 10, y: -6}
+  m_SizeDelta: {x: 618.8232, y: 197.8706}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1704877662
 MonoBehaviour:
@@ -1061,9 +1061,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ESCAPE:
+  m_text: 'Mouse Quest:
 
-    Pete''s House'
+    The Cheese in the Hole'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1090,8 +1090,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1126,7 +1126,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -29.681183, y: -19.205444, z: 24.44336, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1229,7 +1229,7 @@ SpriteRenderer:
   m_Size: {x: 3.84, y: 3.84}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1798226147
@@ -1273,8 +1273,8 @@ Transform:
   m_GameObject: {fileID: 1906297134}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 60.58087, y: 0.9368286, z: -3.4474576}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 108.5052, y: 4.974, z: -3.4474576}
+  m_LocalScale: {x: 1.7910221, y: 2.0743146, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 202959867}

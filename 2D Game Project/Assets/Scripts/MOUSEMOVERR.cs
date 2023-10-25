@@ -74,7 +74,7 @@ public class MOUSEMOVERR : MonoBehaviour
             anim.SetBool("RUN", Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A));
                 if (Input.GetKey(KeyCode.D))
                 {
-                    rb.AddForce(transform.right * 700);
+                    rb.AddForce(transform.right * 1500);
                     Vector3 localScale = transform.localScale;
                     localScale.x = 1f;
                     transform.localScale = localScale;
@@ -82,7 +82,7 @@ public class MOUSEMOVERR : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.A))
                 {
-                    rb.AddForce(transform.right * -700);
+                    rb.AddForce(transform.right * -1500);
                     Vector3 localScale = transform.localScale;
                     localScale.x = -1f;
                     transform.localScale = localScale;
