@@ -11,7 +11,7 @@ public class ESCAPE : MonoBehaviour
     {
         if (collision.tag == "Player" && mouseMode.mOUSEMODE == false)
         {
-            SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene("You Win");
         }
     }
 }
